@@ -50,5 +50,13 @@ contract('Sample Token', ([owner, investor, investor2, investor3]) => {
       const balanceOfInvestor = await sampleToken.balanceOf(investor3);
       assert.equal(balanceOfInvestor, tokens('100'));
     });
+
+    it('Change Owner', async () => {
+      await sampleToken.transferOwnership(investor, {
+        from: owner,
+      });
+      const newOwner = await sampleToken.owner();
+      assert.equal(newOwner, investor);
+    });
   });
 });
