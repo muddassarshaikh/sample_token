@@ -19,6 +19,10 @@
  */
 
 const HDWalletProvider = require('truffle-hdwallet-provider');
+var privateKeys = [
+  '3f841bf589fdf83a521e55d51afddc34fa65351161eead24f064855fc29c9580',
+  '9549f39decea7b7504e15572b2c6a72766df0281cea22bd1a3bc87166b1ca290',
+];
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
@@ -42,21 +46,23 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    development: {
-      host: '127.0.0.1', // Localhost (default: none)
-      port: 7545, // Standard Ethereum port (default: none)
-      network_id: '*', // Any network (default: none)
-    },
-
-    // rinkeby: {
-    //   provider: function () {
-    //     return new HDWalletProvider(
-    //       'repair exhaust current power second tomato seed undo vague guard become jungle',
-    //       'https://rinkeby.infura.io/v3/9381ffe357d14b9c964bc05f46d9d107'
-    //     );
-    //   },
-    //   network_id: 4,
+    // development: {
+    //   host: '127.0.0.1', // Localhost (default: none)
+    //   port: 7545, // Standard Ethereum port (default: none)
+    //   network_id: '*', // Any network (default: none)
     // },
+
+    rinkeby: {
+      provider: function () {
+        return new HDWalletProvider(
+          privateKeys,
+          'https://rinkeby.infura.io/v3/9381ffe357d14b9c964bc05f46d9d107',
+          0,
+          2
+        );
+      },
+      network_id: 4,
+    },
 
     // Another network with more advanced options...
     // advanced: {
