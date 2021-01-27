@@ -43,14 +43,6 @@ contract('Sample Token', ([owner, investor, investor2, investor3]) => {
       assert.equal(allowance, tokens('100'));
     });
 
-    it('Provide approve and check allowance from investor to investor2', async () => {
-      await sampleToken.approve(investor2, tokens('100'), { from: investor });
-      const allowance = await sampleToken.allowance(investor, investor2, {
-        from: investor,
-      });
-      assert.equal(allowance, tokens('100'));
-    });
-
     it('Do transfer on behalf of investor to investor3 ', async () => {
       await sampleToken.transferFrom(investor, investor3, tokens('100'), {
         from: investor2,
