@@ -18,7 +18,7 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('truffle-hdwallet-provider');
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
@@ -47,6 +47,17 @@ module.exports = {
       port: 7545, // Standard Ethereum port (default: none)
       network_id: '*', // Any network (default: none)
     },
+
+    // rinkeby: {
+    //   provider: function () {
+    //     return new HDWalletProvider(
+    //       'repair exhaust current power second tomato seed undo vague guard become jungle',
+    //       'https://rinkeby.infura.io/v3/9381ffe357d14b9c964bc05f46d9d107'
+    //     );
+    //   },
+    //   network_id: 4,
+    // },
+
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

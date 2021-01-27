@@ -17,19 +17,26 @@ Creation of sample token using standard openZeppelin and testing it using truffl
       npm install
 ```
 
-4. Then compile the sample token file (truffle compile)
+4. Then compile the sample token file
 
 ```sh
       truffle compile
 ```
 
-5. Deploy the project on ganache network (truffle migrate --reset)
+5. i) Deploy the project on ganache network
 
 ```sh
       truffle migrate --reset
 ```
 
-6. Then do unit testing (truffle test)
+5. ii) Deploy the project on rinkeby test network
+   Uncomment rinkeby network setting in truffle-config.js file and comment the developement network
+
+```sh
+      truffle migrate --network rinkeby
+```
+
+6. Then do unit testing
 
 ```sh
       truffle test
